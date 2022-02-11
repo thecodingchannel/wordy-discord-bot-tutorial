@@ -1,3 +1,6 @@
+'''
+This part handles the game state management, with each user having their own active game.
+'''
 from wordy_types import ActiveGame
 
 

@@ -1,5 +1,7 @@
+'''
+Data types used by the rest of the program.
+'''
 from enum import Enum
-
 from dataclasses import dataclass, field
 
 

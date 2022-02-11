@@ -18,8 +18,7 @@ from dictionary import get_acceptable_words, get_alphabet, get_solution_words
 
 # Create the bot
 
-bot = commands.Bot(command_prefix="/", description="Wordy Guessing Game", help_command=None,
-    activity=disnake.Game(name='with dictionaries'))
+bot = commands.Bot(command_prefix="/", help_command=None, activity=disnake.Game(name='with dictionaries'))
 
 
 # Add the prefix commands
@@ -111,8 +110,7 @@ async def handle_surrender(user: disnake.User | disnake.Member, reply: Callable)
         return
 
     answer = game.answer
-    game = None
-    set_info_for_user(user.id, game)
+    clear_game(user.id)
 
     await reply(f"You coward! 🙄\nYour word was `{answer}`!")
 

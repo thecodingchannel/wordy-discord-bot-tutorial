@@ -1,5 +1,5 @@
 '''
-This part handles the game state management, with each user having their own active game.
+This file is the glue between the Discord bot and the game logic.
 '''
 
 from wordle_logic import evaluate_guess, generate_new_word
@@ -21,7 +21,7 @@ def begin_game() -> ActiveGame:
 
 def enter_guess(guess: str, game: ActiveGame) -> EndResult:
     """
-    Enter a guess for a user's game and reports back if the game ends.
+    Enter a guess for a user's game, updating the game state.
 
     >>> game=ActiveGame(answer="abcd")
     >>> enter_guess("aaaa", game) == EndResult.PLAYING

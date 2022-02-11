@@ -29,7 +29,7 @@ def evaluate_guess(guess: str, answer: str) -> Iterator[LetterState]:
     if len(guess) != len(answer):
         raise ValueError("Guess and answer must be of same length")
 
-    # Count letters in the guess which aren't exactly correct
+    # Count letters in the guess which are wrong or in the wrong position
     answer_counts = {}
     for guess_letter, answer_letter in zip(guess, answer):
         if guess_letter != answer_letter:
